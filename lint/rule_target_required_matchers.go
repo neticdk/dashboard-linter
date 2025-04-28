@@ -35,7 +35,15 @@ func NewTargetRequiredMatchersRule(config *TargetRequiredMatchersRuleSettings) *
 			if config != nil {
 				for _, m := range config.Matchers {
 					for _, selector := range parser.ExtractSelectors(expr) {
-						if err := checkForMatcher(selector, m.Name, labels.MatchType(m.Type), m.Value); err != nil {
+						mType := labels.MatchType(m.Type)
+						for _, v := range d.Templating.List {
+							if fmt.Sprintf("$%s", v.Name) == m.Value {
+								if v.Multi || v.AllValue != "" {
+									mType = labels.MatchRegexp
+								}
+							}
+						}
+						if err := checkForMatcher(selector, m.Name, mType, m.Value); err != nil {
 							r.AddFixableError(d, p, t, fmt.Sprintf("invalid PromQL query '%s': %v", t.Expr, err), fixTargetRequiredMatcherRule(m.Name, labels.MatchType(m.Type), m.Value))
 						}
 					}

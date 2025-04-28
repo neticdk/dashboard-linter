@@ -28,7 +28,9 @@ func NewPanelDatasourceRule() *PanelRuleFunc {
 				}
 				_, ok := availableDsUids[string(src.UID)]
 				if !ok {
-					r.AddError(d, p, fmt.Sprintf("does not use a templated datasource, uses '%s'", src.UID))
+					if string(src.UID) != "-- Mixed --" {
+						r.AddError(d, p, fmt.Sprintf("does not use a templated datasource, uses '%s'", src.UID))
+					}
 				}
 			}
 
