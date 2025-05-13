@@ -1,17 +1,18 @@
 module github.com/grafana/dashboard-linter
 
-go 1.21.8
+go 1.23.0
 
 toolchain go1.23.1
 
 require (
+	github.com/grafana/grafana-foundation-sdk/go v0.0.0-20241101005901-83e3491f2a70
 	github.com/grafana/loki/v3 v3.2.0
 	github.com/prometheus/prometheus v0.54.1
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	github.com/stretchr/testify v1.9.0
 	github.com/zeitlinger/conflate v0.0.0-20230622100834-279724abda8c
-	golang.org/x/text v0.19.0
+	golang.org/x/text v0.22.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -64,7 +65,6 @@ require (
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/grafana/dskit v0.0.0-20240905221822-931a021fb06b // indirect
 	github.com/grafana/gomemcache v0.0.0-20240229205252-cd6a66d6fb56 // indirect
-	github.com/grafana/grafana-foundation-sdk/go v0.0.0-20241101005901-83e3491f2a70 // indirect
 	github.com/grafana/jsonparser v0.0.0-20240425183733-ea80629e1a32 // indirect
 	github.com/grafana/loki/pkg/push v0.0.0-20231124142027-e52380921608 // indirect
 	github.com/grafana/pyroscope-go/godeltaprof v0.1.8 // indirect
@@ -143,13 +143,13 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.21.0 // indirect
 	go4.org/netipx v0.0.0-20230125063823-8449b0a6169f // indirect
-	golang.org/x/crypto v0.26.0 // indirect
+	golang.org/x/crypto v0.35.0 // indirect
 	golang.org/x/exp v0.0.0-20240404231335-c0f41cb1a7a0 // indirect
 	golang.org/x/mod v0.19.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/oauth2 v0.22.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.24.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/time v0.6.0 // indirect
 	golang.org/x/tools v0.23.0 // indirect
 	google.golang.org/api v0.193.0 // indirect
